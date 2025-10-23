@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <!-- Encodage des caractères -->
+  <meta charset="UTF-8" />
+
+  <!-- Responsive mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Titre de la page (affiché dans l’onglet + utilisé par les moteurs de recherche) -->
+  <title>Réservation Taxi - Taxi Le Mans Étoile Verte</title>
+
+  <!-- Meta description pour le SEO -->
+  <meta name="description" content="Réservez votre taxi au Mans en ligne avec Taxi Étoile Verte. Service rapide, toutes distances, gares, aéroports, hôpitaux. Disponibilité 7j/7." />
+
+  <!-- Canonical pour éviter les contenus dupliqués -->
+  <link rel="canonical" href="https://www.taxilemans.fr/pages/reservation.html" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/taxi-icon.svg" />
+  <link rel="apple-touch-icon" href="../images/apple-touch-icon.png" />
+
+  <!-- Apparence sur iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="theme-color" content="#0b6d0b" />
+
+  <!-- Feuilles de style principales -->
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/reservation.css" />
+
+  <!-- Feuille de style Leaflet pour cartes interactives -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <!-- Font Awesome pour les icônes -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <!-- Open Graph (partage sur réseaux sociaux comme Facebook, WhatsApp) -->
+  <meta property="og:title" content="Réservation Taxi - Taxi Le Mans Étoile Verte" />
+  <meta property="og:description" content="Réservez en ligne votre taxi au Mans avec Taxi Étoile Verte. Disponible 7j/7 pour tous vos déplacements." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.taxilemans.fr/pages/reservation.html" />
+  <meta property="og:image" content="https://www.taxilemans.fr/images/taxi-preview.jpg" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Réservation Taxi - Taxi Le Mans Étoile Verte" />
+  <meta name="twitter:description" content="Réservation de taxi en ligne au Mans. Simple, rapide, fiable avec Taxi Étoile Verte." />
+  <meta name="twitter:image" content="https://www.taxilemans.fr/images/taxi-preview.jpg" />
+
+  <!-- Données structurées Schema.org pour réservation de service -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Réservation Taxi - Taxi Le Mans Étoile Verte",
+    "url": "https://www.taxilemans.fr/pages/reservation.html",
+    "description": "Réservez votre taxi au Mans avec Taxi Étoile Verte. Service rapide, fiable, toutes distances. Réservation 7j/7."
+  }
+  </script>
+</head>
+
+
+<body>
+
+  <!-- Carte plein écran -->
+  <div id="map"></div>
+
+  <!-- === Formulaire modulable === -->
+  <div id="booking-overlay">
+    <div class="form-header"> 
+      <h2>Réserver un trajet</h2>
+      <button class="close-btn" id="close-form">&times;</button>
+    </div>
+
+    <form id="booking-form">
+      <div class="input-group">
+        <label for="origin">Adresse de départ</label>
+        <input type="text" id="origin" placeholder="Adresse de départ" autocomplete="off" required />
+      </div>
+
+      <div class="input-group">
+        <label for="destination">Adresse d’arrivée</label>
+        <input type="text" id="destination" placeholder="Adresse d’arrivée" autocomplete="off" required />
+      </div>
+
+      <div class="reservation-line">
+        <div class="input-group">
+          <label for="date">Date</label>
+          <input type="date" id="date" required />
+        </div>
+        <div class="input-group">
+          <label for="time">Heure</label>
+          <input type="time" id="time" required />
+        </div>
+      </div>
+
+      <button type="submit" class="btn-reserver">Voir le prix / trajet</button>
+    </form>
+
+    <div id="trip-summary" class="trip-summary" style="display:none;"></div>
+    <button id="btn-book-now" class="btn-book-now" style="display:none;">Réservez maintenant</button>
+  </div>
+
+
+  
+
+  <!-- Modal (popup) -->
+  <div id="reservation-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Formulaire de réservation</h3>
+      <form id="final-booking-form">
+        <div class="input-group">
+          <label for="name">Nom complet</label>
+          <input type="text" id="name" required />
+        </div>
+
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" required />
+        </div>
+
+        <div class="input-group">
+          <label for="phone">Téléphone</label>
+          <input type="tel" id="phone" required />
+        </div>
+
+        <button type="submit" class="btn-submit">Confirmer la réservation</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div id="footer"></div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="../js/reservation.js"></script>
+  <script src="../js/script.js"></script>
+
+</body>
+
+
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
