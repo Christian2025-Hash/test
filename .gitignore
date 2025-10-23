@@ -1,0 +1,18 @@
+# Node modules (si tu utilises node)
+node_modules/
+
+# Logs
+*.log
+
+# Mac OS files
+.DS_Store
+
+# Environnement local
+.env
+
+# fichiers temporaires
+*.tmp
+*.temp
+
+# Si tu veux ignorer dist/ (optionnel)
+# dist/
