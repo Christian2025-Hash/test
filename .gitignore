@@ -1,18 +1,28 @@
-# Node modules (si tu utilises node)
+# Node modules (si tu utilises npm)
 node_modules/
 
 # Logs
 *.log
+server.log
 
-# Mac OS files
+# Mac OS
 .DS_Store
 
-# Environnement local
+# Fichiers d’environnement (si tu en as)
 .env
 
-# fichiers temporaires
+# Fichiers temporaires
 *.tmp
 *.temp
+*.bak
 
-# Si tu veux ignorer dist/ (optionnel)
+# Build / dossier dist
+# Si tu ne veux PAS versionner le dossier dist, décommente la ligne suivante
 # dist/
+
+# Si tu veux ignorer les fichiers IDE (exemple VSCode)
+.vscode/
+
+# Autres dossiers/fichiers temporaires
+*.swp
+*.swo
