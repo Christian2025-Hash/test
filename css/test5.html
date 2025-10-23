@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Exemple Footer Collé en Bas</title>
+<style>
+  :root {
+    --color-secondary: #34495e;
+    --color-light: #ecf0f1;
+    --color-primary: #2980b9;
+    --color-accent: #e67e22;
+    --color-muted: #95a5a6;
+    --transition: all 0.3s ease;
+  }
+
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Important pour que flex marche bien */
+    font-family: Arial, sans-serif;
+  }
+
+  main.container {
+    flex: 1; /* prend tout l’espace vertical restant */
+    padding: 100px 20px 80px; /* espace en haut et avant le footer */
+    background: #fefefe;
+  }
+
+  /* Footer */
+  footer {
+    margin-top: auto; /* pousse vers le bas */
+    background-color: var(--color-secondary);
+    color: var(--color-light);
+    padding: 70px 20px 20px;
+    text-align: center;
+    box-shadow: 0 -3px 10px rgba(0,0,0,0.1);
+  }
+
+  /* Exemple simple de contenu dans le footer */
+  footer p {
+    margin: 0;
+  }
+</style>
+</head>
+<body>
+  <main class="container">
+    <h1>Contenu principal</h1>
+    <p>Voici du contenu qui remplit un peu la page.</p>
+  </main>
+  <footer>
+    <p>© 2025 Mon Site - Tous droits réservés</p>
+  </footer>
+</body>
+</html>

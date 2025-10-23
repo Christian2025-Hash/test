@@ -1,0 +1,276 @@
+/* === tarifs.css === */
+
+/* ----------------------------------------
+   🎨 Styles globaux pour la page "Tarifs"
+---------------------------------------- */
+.page-tarifs {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #fefefe;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
+
+.section-title {
+  text-align: center;
+  color: #2c3e50;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.page-tarifs p {
+  text-align: center;
+  color: #555;
+  margin-bottom: 30px;
+  font-size: 1rem;
+}
+
+/* ----------------------------------------
+   💰 Styles du tableau "Tarifs"
+---------------------------------------- */
+table.tarif-table {
+  width: 100%;
+  border-collapse: collapse; /* lignes visibles entre les cellules */
+  border: 1px solid #ddd;    /* contour léger */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.50); /* ombre douce autour du tableau */
+}
+
+/* En-tête du tableau */
+table.tarif-table thead {
+  background-color: #2980b9;
+  color: #fff;
+}
+
+table.tarif-table thead th {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 2px solid #1f6391; /* ligne plus marquée sous l'en-tête */
+}
+
+/* Corps du tableau */
+table.tarif-table tbody tr {
+  background-color: #fff;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+table.tarif-table tbody tr:nth-child(even) {
+  background-color: #f7f9fb; /* alternance douce */
+}
+
+/* Lignes et cellules */
+table.tarif-table td {
+  padding: 12px 15px;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* Effet de survol élégant */
+table.tarif-table tbody tr:hover {
+  background-color: #f0f8ff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+/* ===================================================
+   🧱 LAYOUT GLOBAL (structure commune à tout le site)
+=================================================== */
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* juste 100vh au lieu de 1000vh */
+}
+
+main.container {
+  flex: 1;
+  padding-top: 100px;
+  padding-bottom: 80px;
+  box-sizing: border-box;
+}
+
+footer {
+  margin-top: auto;
+  background-color: var(--color-secondary);
+  color: var(--color-light);
+  padding: 70px 20px 20px;
+  text-align: center;
+  box-shadow: 0 -3px 10px rgba(0,0,0,0.1);
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ----------------------------------------
+   🧩 Contenu principal
+   (pousse le footer vers le bas et crée un espace visuel)
+---------------------------------------- */
+main {
+  flex: 1;
+  padding-bottom: 100px; /* ✅ Espace avant le footer (ajustable : 60–120px) */
+}
+
+/* ===================================================
+   ⚙️ FOOTER GLOBAL (valable pour tout le site)
+=================================================== */
+footer {
+  background-color: var(--color-secondary);
+  color: var(--color-light);
+  padding: 70px 20px 20px;
+  text-align: center;
+
+  /* Collé en bas de page grâce au flex parent */
+  margin-top: auto;
+  box-shadow: 0 -3px 10px rgba(0,0,0,0.1);
+}
+
+/* ----------------------------------------
+   Grille de contenu du footer
+---------------------------------------- */
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+  justify-items: center;
+  align-items: start;
+}
+
+.footer-links-group h3,
+.footer-social h3 {
+  color: var(--color-accent);
+}
+
+/* Logo et slogan */
+.footer-logo h3 {
+  color: #fff;
+}
+.footer-logo .etoile {
+  color: #FFD700;
+  font-weight: bold;
+  margin: 0 5px;
+}
+
+/* Titres décoratifs */
+.footer-links h3,
+.footer-social h3,
+.shared-title {
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.footer-links h3::after,
+.footer-social h3::after,
+.shared-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background-color: var(--color-primary);
+}
+
+/* Liens */
+.footer-links-group {
+  text-align: center;
+}
+
+.footer-links-columns {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.footer-links-columns .footer-links ul {
+  text-align: left;
+}
+
+.footer-links ul li {
+  margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+  color: var(--color-light);
+  transition: var(--transition);
+}
+
+.footer-links ul li a:hover,
+.footer-links ul li a:focus {
+  color: var(--color-accent);
+  padding-left: 5px;
+}
+
+/* ===================================================
+   📍 CAS SPÉCIFIQUE (ex. page Contact)
+=================================================== */
+
+/* Sur la page contact, on crée un espace supplémentaire avant le footer */
+.page-contact main {
+  margin-bottom: 80px; /* ✅ espace visuel avant le footer */
+}
+
+/* Optionnel : si tu veux *vraiment* descendre le footer plus bas */
+.page-contact footer {
+  margin-top: 80px !important;
+}
+
+/* ----------------------------------------
+   📱 Responsive (mobile)
+---------------------------------------- */
+@media (max-width: 600px) {
+  table.tarif-table,
+  table.tarif-table thead,
+  table.tarif-table tbody,
+  table.tarif-table th,
+  table.tarif-table td,
+  table.tarif-table tr {
+    display: block;
+  }
+
+  table.tarif-table thead {
+    display: none;
+  }
+
+  table.tarif-table tr {
+    margin-bottom: 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    background-color: white;
+  }
+
+  table.tarif-table td {
+    border: none;
+    padding: 10px 15px;
+    position: relative;
+    text-align: right;
+  }
+
+  table.tarif-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 15px;
+    font-weight: 600;
+    color: #2980b9;
+    text-align: left;
+  }
+}

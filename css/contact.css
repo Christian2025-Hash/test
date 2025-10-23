@@ -1,0 +1,55 @@
+body.contact {
+  background-color: var(--color-bg-light);
+}
+
+.contact-wrapper {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin: 40px 0;
+}
+
+.contact-info {
+  flex: 1;
+  font-size: 1.1rem;
+}
+
+.contact-map {
+  flex: 1;
+  text-align: center;
+}
+
+
+
+/* ===================================================
+   🧱 LAYOUT GLOBAL (structure commune à tout le site)
+=================================================== */
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* juste 100vh au lieu de 1000vh */
+}
+
+main.container {
+  flex: 1;
+  padding-top: 100px;
+  padding-bottom: 80px;
+  box-sizing: border-box;
+}
+
+footer {
+  margin-top: auto;
+  background-color: var(--color-secondary);
+  color: var(--color-light);
+  padding: 70px 20px 20px;
+  text-align: center;
+  box-shadow: 0 -3px 10px rgba(0,0,0,0.1);
+}
+

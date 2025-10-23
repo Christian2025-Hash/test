@@ -1,0 +1,51 @@
+
+
+/* structure de base de page */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ton contenu principal */
+main {
+  flex: 1;
+}
+
+
+/* couleur de fond */
+body.reservation {
+  background-color: var(--color-bg-light);
+}
+
+.form-reservation {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 30px;
+  background: white;
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-reservation label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+}
+
+.form-reservation input {
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: var(--border-radius);
+  border: 1px solid #ccc;
+}
+
+
+
+
+

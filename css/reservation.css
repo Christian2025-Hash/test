@@ -1,0 +1,384 @@
+
+    /* === Carte plein écran === */
+    #map {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+    }
+
+    /* === Formulaire superposé === 
+    #booking-overlay {
+      position: fixed;
+      top: 10rem;
+      left: 2rem;
+      background: rgba(255, 255, 255, 0.96);
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 420px;  
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+      cursor: grab;
+      user-select: none;
+    }
+*/
+
+    #booking-overlay {
+  position: fixed;
+  top: 12rem;          /* descend un peu plus */
+  left: 2rem;
+  background: rgba(255, 255, 255, 0.96);
+  padding: 30px;       /* plus d’espace intérieur */
+  border-radius: 10px;
+  max-width: 600px;    /* largeur augmentée */
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  cursor: grab;
+  user-select: none;
+}
+
+
+
+
+    /* === En-tête du formulaire === */
+    .form-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .form-header h2 {
+      margin: 0;
+      font-size: 18px;
+      user-select: text;
+    }
+
+
+.close-btn {
+  background-color: red;
+  color: transparent;       /* Crois invisible */
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  user-select: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: white;              /* Crois visible au survol */
+  background-color: darkred;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  transform: scale(1.1) rotate(10deg);
+}
+
+
+
+   
+
+    /* === Champs du formulaire === */
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 15px;
+      position: relative; /* important pour positionner suggestions */
+    }
+
+    label {
+      font-weight: bold;
+      font-size: 14px;
+      margin-bottom: 5px;
+      user-select: text;
+    }
+
+    input {
+      padding: 8px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      user-select: text;
+    }
+
+    /* === Suggestions === */
+    .suggestions-container {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: #000; /* noir */
+      color: #fff;
+      max-height: 200px;
+      overflow-y: auto;
+      border: 1px solid #333;
+      border-top: none;
+      border-radius: 0 0 5px 5px;
+      z-index: 1100;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+      font-size: 14px;
+    }
+
+    .suggestion-item {
+      padding: 8px 10px;
+      cursor: pointer;
+      border-bottom: 1px solid #222;
+      user-select: none;
+    }
+
+    .suggestion-item:hover {
+      background-color: #222;
+    }
+
+    .reservation-line {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn-reserver,
+    .btn-book-now {
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px;
+      width: 100%;
+      cursor: pointer;
+      transition: background 0.3s;
+      font-weight: bold;
+      user-select: none;
+    }
+
+    .btn-reserver:hover {
+      background: #0056b3;
+    }
+
+    .btn-book-now {
+      background: #28a745;
+      margin-top: 10px;
+    }
+
+    .btn-book-now:hover {
+      background: #1e7e34;
+    }
+
+
+
+
+/* Conteneur des boutons radio */
+.trip-type {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 1.2rem 0;
+}
+
+/* Label contenant chaque option */
+.trip-option {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 14px; /*font-size: 1rem;*/
+  color: #333;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.trip-option:hover {
+  color: #007bff;
+}
+
+/* Style personnalisé pour les boutons radio */
+.trip-option input[type="radio"] {
+  accent-color: #007bff; /* couleur bleue moderne */
+  width: 1.1rem;
+  height: 1.1rem;
+  cursor: pointer;
+}
+
+/* Si tu veux un style un peu plus chic */
+.trip-option input[type="radio"]:checked + span {
+  font-weight: bold;
+  color: #007bff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* === Responsive mobile === */
+    @media (max-width: 600px) {
+      #booking-overlay {
+        left: 50%;
+        top: 1rem;
+        transform: translateX(-50%);
+        width: 90%;
+        cursor: default;
+      }
+    }
+
+    /* === Résumé trajet === */
+    #trip-summary {
+      margin-top: 15px;
+      font-size: 14px;
+      display: none;
+    }
+
+    #trip-summary table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    #trip-summary th,
+    #trip-summary td {
+      padding: 6px 8px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+
+    #trip-summary th {
+      background-color: #f2f2f2;
+      width: 40%;
+    }
+
+
+
+
+/* === Modal popup === */
+.modal {
+  display: none; /* cachée par défaut */
+  position: fixed;
+  z-index: 1500; /* au-dessus de tout */
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto; /* scroll si contenu trop grand */
+  background-color: rgba(0, 0, 0, 0.6); /* fond semi-transparent noir */
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+/* Contenu modal */
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto; /* centré verticalement et horizontalement */
+  padding: 20px 25px;
+  border-radius: 10px;
+  max-width: 400px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  position: relative;
+  font-family: Arial, sans-serif;
+}
+
+/* Bouton fermer (X) */
+.modal .close {
+  color: #555;
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.3s ease;
+}
+
+.modal .close:hover {
+  color: #000;
+}
+
+/* Titres dans la modal */
+.modal-content h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 22px;
+  color: #222;
+  user-select: text;
+}
+
+/* Champs du formulaire */
+.modal-content .input-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-content label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #333;
+  user-select: text;
+}
+
+.modal-content input {
+  padding: 8px 10px;
+  font-size: 14px;
+  border: 1.5px solid #bbb;
+  border-radius: 6px;
+  transition: border-color 0.3s ease;
+}
+
+.modal-content input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0,123,255,0.5);
+}
+
+/* Bouton de soumission */
+.modal-content .btn-submit {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  font-weight: 600;
+  padding: 12px;
+  width: 100%;
+  border-radius: 7px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+.modal-content .btn-submit:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .modal-content {
+    margin: 20% 10px;
+    width: auto;
+  }
+}
+
+
+
+

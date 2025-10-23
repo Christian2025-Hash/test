@@ -1,0 +1,36 @@
+/* === a-propos.css === */
+
+/* ----------------------------------------
+   Styles globaux pour la page "À propos"
+---------------------------------------- */
+body.a-propos {
+  background-color: #f7f9fc; /* Fond clair général */
+  color: #222;               /* Texte principal sombre */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Police globale */
+}
+
+/* Conteneur principal de la page */
+.page-a-propos {
+  background-color: #fff;           /* Fond blanc */
+  padding: 2.5rem 3rem;             /* Espacement interne */
+  border-radius: 10px;              /* Coins arrondis */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1); /* Ombre légère */
+  max-width: 800px;                 /* Largeur max */
+  margin: 0 auto;                  /* Centrage horizontal */
+  line-height: 1.6;                /* Hauteur de ligne confortable */
+  font-size: 1.1rem;               /* Taille du texte légèrement augmentée */
+}
+
+/* Titre des sections */
+.section-title {
+  font-size: 2rem;
+  color: #007BFF;               /* Bleu principal */
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Paragraphes dans la page à propos */
+.page-a-propos p {
+  margin-bottom: 1.2rem;
+  color: #444;                 /* Gris moyen pour contraste */
+}
